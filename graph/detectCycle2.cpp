@@ -26,14 +26,14 @@ class graph{
 		}
 	}
 	
-	bool isCyclic(int node , unordered_map<int,bool> &visited){
-		unordered_map<int,int> parent;
+	bool isCyclic(int node , unordered_map<int,bool> &visited,int parent){
+
 		parent[node] = -1;
 		visited[node] = 1;
 		
 		for(auto i:adj[node]){
 			if(visited[i] && i!=parent[node]) return true;
-			else if(!visited[i]) isCyclic(i,visited);
+			else if(!visited[i]) isCyclic(i,visited,node);
 		}
 		return false;
 	}
@@ -42,7 +42,7 @@ class graph{
 		unordered_map<int,bool> visited;
 		for(int i=0; i<n; i++){
 			if(!visited[i]){
-				bool ans = isCyclic(i,visited);
+				bool ans = isCyclic(i,visited,-1);
 				if(ans) return "yes cycle is present in the graph";
 			}
 		}
