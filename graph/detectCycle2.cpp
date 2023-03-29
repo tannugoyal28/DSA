@@ -27,8 +27,6 @@ class graph{
 	}
 	
 	bool isCyclic(int node , unordered_map<int,bool> &visited,int parent){
-
-		parent[node] = -1;
 		visited[node] = 1;
 		
 		for(auto i:adj[node]){
