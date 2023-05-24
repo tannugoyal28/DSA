@@ -58,7 +58,7 @@ int main(){
 		g.makeEdge(u,v);
 	}
 	
-	if(g.topologicalSort(n)) cout<<"cycle is present";
+	if(!g.topologicalSort(n)) cout<<"cycle is present";
 	else cout<<"there is no cycle in the graph";
 	
 	return 0;
