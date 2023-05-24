@@ -13,15 +13,13 @@ class graph{
 		
 		bool checkCycleDFS(int node, unordered_map<int,bool> &visited, unordered_map<int,bool> &visitedDfs){
 			visited[node] = true;
-			visitedDfs[node] = true;
-			for(auto i:adj[node]){
-				if(!visited[i]){
-					bool cycleDetected = checkCycleDFS(i,visited,visitedDfs);
-					if(cycleDetected) return true;
-				}else if(visitedDfs[i]) return true;
-			}
-			visitedDfs[node] = false;
-			return false;
+                        visitedDfs[node] = true;
+                       for(auto i:adj[node]){
+                            if(visited[i] && visitedDfs) return true;
+                            else if(!visited[i]) isCycle(visited,i);
+                       }
+                       visitedDfs[node] = false;
+                       return false;
 		}
 		
 		bool detectCycle(int n){
