@@ -1,6 +1,6 @@
-//algo to find the shortest possible path in a directed having having negative weigths also but not the negative cycle in the graph
-//you can also use this algo to find is there any negative cycle in the graph 
-//if you keep obesrving the change in the distance even after the n-1 comparison then you can say that there is a negative cycle in the graph
+//algo to find the shortest possible path in a directed graph having negative weights but there should not ne any negative cycle in the graph.
+//you can also use this algo to find negative cycle in the graph .
+//if you keep obesrving the change in the distance even after the n-1 comparison then you can say there is a negative cycle present .
 
 //#include<iostream>
 #include<bits/stdc++.h>
